@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 17:24:43 by aweissha          #+#    #+#             */
-/*   Updated: 2024/10/12 15:41:32 by aweissha         ###   ########.fr       */
+/*   Updated: 2024/10/14 11:53:16 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ class AForm
 		const char *what() const throw();
 	};
 	class GradeTooLowException : public std::exception
+	{
+		public:
+		const char *what() const throw();
+	};
+	class FormNotSignedException : public std::exception
 	{
 		public:
 		const char *what() const throw();

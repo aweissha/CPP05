@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 16:32:44 by aweissha          #+#    #+#             */
-/*   Updated: 2024/10/12 18:09:21 by aweissha         ###   ########.fr       */
+/*   Updated: 2024/10/14 11:49:25 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ void ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const
 {
 	if (bureaucrat.getGrade() > this->getExecGrade())
 		throw GradeTooLowException();
+	if (this->getSignedStatus() == false)
+		throw FormNotSignedException();
 	try
 	{
 		createShrubbery();
-		
 	}
-	catch (const std::runtime_error& e)
-	catch (...)
+	catch (const char *e)
 	{
-		
+		std::cerr << "Error: " << e << std::endl;
 	}
 }
 
@@ -79,6 +79,5 @@ void ShrubberyCreationForm::createShrubbery() const
 		newFile.close();
 	}
 	else
-		throw std::runtime_error("could not open file");
 		throw "Could not open file";
 }
