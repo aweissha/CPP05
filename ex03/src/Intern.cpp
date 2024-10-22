@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 11:18:33 by aweissha          #+#    #+#             */
-/*   Updated: 2024/10/19 12:41:03 by aweissha         ###   ########.fr       */
+/*   Updated: 2024/10/22 11:38:27 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,31 @@
 #include "../include/RobotomyRequestForm.hpp"
 #include "../include/PresidentialPardonForm.hpp"
 
+Intern::Intern()
+{
+	std::cout << "Intern default constructor called" << std::endl;
+}
+
+Intern::Intern(const Intern &original)
+{
+	(void) original;
+	std::cout << "Intern copy constructor called" << std::endl;
+}
+
+Intern::~Intern()
+{
+	std::cout << "Intern destructor called" << std::endl;
+}
+
+Intern &Intern::operator=(const Intern &original)
+{
+	(void) original;
+	std::cout << "Intern copy assignment operator called" << std::endl;
+	return (*this);
+}
+
 AForm *Intern::createShrubberyForm(const std::string& target)
 {
-	
 	return (new ShrubberyCreationForm(target));
 }
 

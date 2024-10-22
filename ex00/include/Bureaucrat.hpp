@@ -6,7 +6,7 @@
 /*   By: aweissha <aweissha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:54:07 by aweissha          #+#    #+#             */
-/*   Updated: 2024/10/12 15:42:40 by aweissha         ###   ########.fr       */
+/*   Updated: 2024/10/22 11:36:32 by aweissha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Bureaucrat
 {
 	private:
-	const std::string _name;
-	int			_grade;
+	const std::string	_name;
+	int					_grade;
 
 	public:
 	Bureaucrat();
